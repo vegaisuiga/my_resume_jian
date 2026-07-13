@@ -8,19 +8,6 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script>
-  (function() {
-    const birthDate = new Date(2001, 4, 14); // 月份从0开始，5月就是4
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    // 如果今年生日还没到，年龄减1
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    document.getElementById('age-display').textContent = age + '岁';
-  })();
-</script>
 <div class="resume-container">
 <!-- ===================== 顶部信息 ===================== -->
 <header class="header-banner">
@@ -282,5 +269,18 @@ TOEIC 570<br>
 </section>
 </main>
 </div>
+    <script>
+  (function() {
+    const birthDate = new Date(2001, 4, 14); // 月份从0开始，5月就是4
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    // 如果今年生日还没到，年龄减1
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    document.getElementById('age-display').textContent = age + '岁';
+  })();
+</script>
 </body>
 </html>
