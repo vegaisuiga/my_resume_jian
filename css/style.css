@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* ===================== 主容器 ===================== */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+  animation: resumeShow .8s ease forwards;
+}
+
+@keyframes resumeShow {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== 顶部区域 ===================== */
+.header-banner {
+  background: #1a1a2e;
+  color: white;
+  padding: 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, .04);
+  border-radius: 50%;
+  animation: circleMove 12s infinite alternate;
+}
+
+.header-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, .03);
+  border-radius: 50%;
+}
+
+@keyframes circleMove {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-50px, 40px); }
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== 图片区域 ===================== */
+.photo-placeholder {
+  width: 130px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, .1);
+  animation: photoFade 1s ease;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@keyframes photoFade {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===================== 头部文字 ===================== */
+.header-info { flex: 1; }
+
+.header-info h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+
+.title {
+  font-size: 16px;
+  color: #a0aec0;
+  margin-bottom: 16px;
+}
+
+.header-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.header-tags span {
+  background: rgba(255, 255, 255, .12);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, .15);
+}
+
+/* ===================== 内容 ===================== */
+.main-content { padding: 0 50px 40px; }
+
+/* ===================== 个人信息 ===================== */
+.personal-info-section {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 30px 0;
+  border: 1px solid #e2e8f0;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px 20px;
+}
+
+.info-item {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  transition: .25s;
+}
+
+.info-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.info-item span {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.info-item strong {
+  font-size: 14px;
+  color: #334155;
+}
+
+/* ===================== 分区 ===================== */
+.section { margin-top: 32px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.section-icon {
+  width: 36px;
+  height: 36px;
+  background: #1a1a2e;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* ===================== 简介 ===================== */
+.intro-text {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* ===================== 经历卡片 ===================== */
+.experience-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-bottom: 16px;
+  border-left: 4px solid #1a1a2e;
+  opacity: 0;
+  animation: cardShow .6s ease forwards;
+  transition: .25s;
+}
+
+.experience-card:hover {
+  transform: translateX(6px) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+@keyframes cardShow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.card-date {
+  font-size: 13px;
+  color: #94a3b8;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.card-body {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.card-body ul { list-style: none; }
+
+.card-body li {
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.card-body li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #1a1a2e;
+  font-weight: bold;
+}
+
+/* ===================== 技能 ===================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.skill-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #1a1a2e;
+  border-radius: 50%;
+}
+
+.skill-card p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* ===================== 语言证书 ===================== */
+.lang-cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.lang-card,
+.cert-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 22px;
+}
+
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lang-level {
+  font-size: 13px;
+  color: #64748b;
+  text-align: right;
+}
+
+.cert-tag {
+  display: inline-block;
+  background: #1a1a2e;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ===================== 自我评价 ===================== */
+.self-eval {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 22px 26px;
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.9;
+}
+
+/* ===================== 响应式 ===================== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-tags { justify-content: center; }
+
+  .main-content { padding: 0 24px 30px; }
+
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .lang-cert-grid { grid-template-columns: 1fr; }
+
+  .card-header { flex-direction: column; }
+
+  .card-date { margin-top: 8px; }
+}
