@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <script>
+  (function() {
+    const birthDate = new Date(2001, 4, 14); // 月份从0开始，5月就是4
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    // 如果今年生日还没到，年龄减1
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    document.getElementById('age-display').textContent = age + '岁';
+  })();
+</script>
 <div class="resume-container">
 <!-- ===================== 顶部信息 ===================== -->
 <header class="header-banner">
@@ -32,17 +45,17 @@
 <main class="main-content">
 <!-- ===================== 个人信息 ===================== -->
 <section class="personal-info-section">
-<div class="info-title">📋 个人信息</div>
-<div class="info-grid">
-<div class="info-item"><span>姓名</span><strong>孙坚</strong></div>
-<div class="info-item"><span>性别</span><strong>男</strong></div>
-<div class="info-item"><span>年龄</span><strong>25岁</strong></div>
-<div class="info-item"><span>出生日期</span><strong>2001年5月14日</strong></div>
-<div class="info-item"><span>电话号码</span><strong>176-2603-9246</strong></div>
-<div class="info-item"><span>邮箱</span><strong>vegaisuiga@gmail.com</strong></div>
-<div class="info-item"><span>微信号码</span><strong>Andromeda0910</strong></div>
-
-</div>
+  <div class="info-title">📋 个人信息</div>
+  <div class="info-grid">
+    <div class="info-item"><span>姓名</span><strong>孙坚</strong></div>
+    <div class="info-item"><span>性别</span><strong>男</strong></div>
+    <div class="info-item"><span>年龄</span><strong id="age-display">计算中…</strong></div>
+    <div class="info-item"><span>出生日期</span><strong>2001年5月14日</strong></div>
+    <div class="info-item"><span>电话号码</span><strong>176-2603-9246</strong></div>
+    <div class="info-item"><span>邮箱</span><strong>vegaisuiga@gmail.com</strong></div>
+    <div class="info-item"><span>微信号码</span><strong>Andromeda0910</strong></div>
+    <!-- 其他信息项… -->
+  </div>
 </section>
 <!-- ===================== 个人简介 ===================== -->
 <section class="section">
